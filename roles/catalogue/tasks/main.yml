@@ -8,7 +8,6 @@
     name: commoncode
     tasks_from: nodejs
    
-
 - name: systemd setup
   include_role:
     name: commoncode
@@ -18,7 +17,7 @@
   ansible.builtin.copy:
     src: "mongo.repo"
     dest: "/etc/yum.repos.d/mongo.repo"
-    
+
 - name: install mongodb client
   ansible.builtin.dnf:
     name: mongodb-mongosh
@@ -32,5 +31,6 @@
   ansible.builtin.debug:
     msg: "{{ catalogue_output }}"
 
-- name: load products  ansible.builtin.shell: mongosh --host mongodb.jiony.xyz < /app/db/master-data.js
+- name: load products  
+  ansible.builtin.shell: mongosh --host mongodb.jiony.xyz < /app/db/master-data.js
   when: catalogue_output.stdout | int < 0          # converting frm string to int        
