@@ -1,8 +1,4 @@
-  
-  vars_prompt:
-    - name: ROOT_PASSWORD
-      prompt: Enter root password
-  
+
     - name: task1..installing mysql
       ansible.builtin.package:
         name: "mysql-server"
@@ -16,4 +12,4 @@
 
     - name: task3..setup root password
       ansible.builtin.command:
-        cmd: 'mysql_secure_installation --set-root-pass {{ ROOT_PASSWORD }}'    
+        cmd: 'mysql_secure_installation --set-root-pass RoboShop@1'    
