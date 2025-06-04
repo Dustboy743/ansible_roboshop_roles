@@ -32,8 +32,8 @@
 
 - name: daemon
   include_role:
-    - name: common
-      tasks_from: systemd    
+    name: common
+    tasks_from: systemd    
   
 
 
