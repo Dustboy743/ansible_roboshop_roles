@@ -3,7 +3,7 @@
   hosts: "{{ component }}"
   become: yes
   vars_files:
-    - vars/pass.yml
+      vault/mysql.yml
   roles:
     - "{{ component }}"
  
