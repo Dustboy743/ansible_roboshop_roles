@@ -1,0 +1,9 @@
+---
+- name: installing "{{ component }}"
+  hosts: "{{ component }}"
+  become: yes
+  vars_files:
+    - vars/pass.yml
+  roles:
+    - "{{ component }}"
+ 
